@@ -39,9 +39,11 @@ const client = new Client({
 });
 
 client.commands = new Collection();
+client.buttons = new Collection();
+client.selects = new Collection();
 module.exports = client;
 
-["Command", "Event"].forEach((handler) => {
+["Command", "Event", "Button", "SelectMenu"].forEach((handler) => {
   require(`./handlers/${handler}`)(client);
 });
 
