@@ -5,13 +5,13 @@ module.exports = {
   /**
    * @param {CommandInteraction} interaction
    * @param {Client} client
-   */
+  */
 
   run: async (client, interaction) => {
-    if (interaction.valueOf("first_option")) {
+    if (interaction.values[0] === "first_option") {
       interaction.reply({ content: "première option" });
-    } else if (interaction.valueOf("secon_option")) {
-      interaction.reply({ content: "test" });
+    } else if (interaction.valueOf("second_option")) {
+      interaction.reply({ content: "seconde option" });
     }
   },
 };
